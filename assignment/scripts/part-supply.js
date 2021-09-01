@@ -49,7 +49,7 @@ console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
 
-for (supplies of supplyChanges){
+for (supplies of supplyChanges) {
   if (supplies > 0){
   console.log(`Added ${supplies} parts`)
 } else if (supplies === 0) {
@@ -62,7 +62,27 @@ for (supplies of supplyChanges){
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
 
+let n = 0;
+
+while (n < supplyChanges.length) {
+  if (supplyChanges[n] > 0){
+  console.log(`Added ${supplyChanges[n]} parts`);
+} else if (supplyChanges[n] === 0){
+    console.log('No Change')
+  } else {
+    console.log(`Removed ${supplyChanges[n]} parts`);
+  };
+  n++;
+};
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+// definately looked this up on stackoverflow.
+let total = 0;
+
+for (let i = 0; i < supplyChanges.length; i++){
+  total = supplyChanges[i] + total;
+}
+
+console.log(total);
